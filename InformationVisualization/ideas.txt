@@ -1,0 +1,10 @@
+Ogni n secondi aggiorni i valori dei conncentrator
+Semplifica la rete lv mettendo nei bus la media dei concentrator relativi a quel bus
+memorizzare un buffer di dati per ogni conentrator per mostratali in un grafico che si aggiorna
+Possibile workflow:
+- Far girare algoritmo per avere un json/db con i dati
+- Fare script python con flask per servire pagina html 
+- mostrare newtork fino a LV collector
+- Usare socket Io per richiedere ogni secondo i dati realitvi a un dato deltaT da d3.js
+- Usare socketIo su flask per fornire tensione e corrente ogni secondo per le bus MV e per il bus lv selezionato
+- Sulla sinistra mostrare sempre la rete completa mentre sulla destra mostrare il grafico di tensione e corrente per il bus lv selezionato
