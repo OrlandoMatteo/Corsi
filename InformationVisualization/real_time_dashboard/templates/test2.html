@@ -7,6 +7,8 @@
 
         <script src="{{url_for('static', filename='internal/jquery.min.js')}}" defer></script>
         <script src="{{url_for('static', filename='script.js')}}"></script>
+        <script src="{{url_for('static', filename='realTimeLineChartI.js')}}"></script>
+
 
 <style>
 .node circle {
@@ -28,15 +30,20 @@
 </head>
 <body>
     <div class="row">
-        <div class="col-xs-12 col-md-8">
+        <div class="col-xs-12 col-md-7">
             <svg id="network" width="960" height="1080"></svg>
         </div>
-        <div class="col-xs-12 col-md-4">
+        <div class="col-xs-12 col-md-5">
+            <h2 id="busSelected">Bus selected: </h2>
+            <div id="chartsDiv">
             <div id="chart"></div>
+            <div id="chartI"></div>
+            </div>
         </div>
     </div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
+var nodeForChart=""
 // Set the dimensions and margins of the diagram
 var margin = {top: 20, right: 90, bottom: 30, left: 90},
     width = 960 - margin.left - margin.right,
@@ -229,6 +236,12 @@ function collapse(d) {
 
     // Toggle children on click.
     function click(d) {
+
+      if(d.data.children.length==0){
+        nodeForChart=d.data.name;
+        $("#busSelected").html("Bus selected: "+nodeForChart)
+        refreshDiv()
+      }
       if (d.children) {
           d._children = d.children;
           d.children = null;
@@ -253,7 +266,7 @@ function collapse(d) {
         }
     
         function seedData() {
-            $.ajax('/getInitData', 
+            $.ajax('/getInitData?id='+nodeForChart, 
             {
                 dataType: 'json', // type of response data
                 timeout: 500,     // timeout milliseconds
@@ -272,7 +285,7 @@ function collapse(d) {
         }
     
         function updateData() {
-            $.ajax('/getData', 
+            $.ajax('/getData?id='+nodeForChart, 
             {
                 dataType: 'json', // type of response data
                 timeout: 500,     // timeout milliseconds
@@ -308,5 +321,78 @@ function collapse(d) {
           d3.select(window).on('resize', resize);
         });
         </script>
+
+<script>
+  //CURRENT
+    var lineArrI = [];
+    var MAX_LENGTH = 100;
+    var duration = 500;
+    var chartI = realTimeLineChartI();
+
+    function randomNumberBounds(min, max) {
+      return Math.floor(Math.random() * max) + min;
+    }
+
+    function seedData() {
+        $.ajax('/getInitData?id='+nodeForChart, 
+        {
+            dataType: 'json', // type of response data
+            timeout: 500,     // timeout milliseconds
+            success: function (data,status,xhr) { 
+                  // success callback function
+                for (var i=0;i<data.length;i++){
+                    data[i].time=new Date();
+                lineArrI.push(data[i]);
+
+                }
+            },
+            error: function (jqXhr, textStatus, errorMessage) { // error callback 
+                console.log("Error")
+            }
+        });
+    }
+
+    function updateDataI() {
+        $.ajax('/getData?id='+nodeForChart, 
+        {
+            dataType: 'json', // type of response data
+            timeout: 500,     // timeout milliseconds
+            success: function (data,status,xhr) {   // success callback function
+                data.time=new Date();
+                lineArrI.push(data);
+
+                if (lineArrI.length > 30) {
+                    lineArrI.shift();
+                }
+                d3.select("#chartI").datum(lineArrI).call(chartI);
+            },
+            error: function (jqXhr, textStatus, errorMessage) { // error callback 
+                console.log("Error")
+            }
+        });
+
+
+    }
+
+    function resizeI() {
+      if (d3.select("#chartI svg").empty()) {
+        return;
+      }
+      chartI.width(+d3.select("#chartI").style("width").replace(/(px)/g, ""));
+      d3.select("#chartI").call(chartI);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      //seedData();
+      window.setInterval(updateDataI, 500);
+      d3.select("#chartI").datum(lineArrI).call(chartI);
+      d3.select(window).on('resize', resize);
+    });
+    </script>
+<script>
+function refreshDiv(){
+  $("#chartsDiv").html('<div id="chart"></div><div id="chartI"></div>')
+}
+</script>
 </body>
 </html>

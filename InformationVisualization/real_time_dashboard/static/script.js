@@ -1,5 +1,5 @@
 function realTimeLineChart() {
-    var margin = {top: 20, right: 20, bottom: 20, left: 20},
+    var margin = {top: 40, right: 20, bottom: 20, left: 40},
         width = 600,
         height = 400,
         duration = 500,
@@ -8,7 +8,7 @@ function realTimeLineChart() {
     function chart(selection) {
       // Based on https://bl.ocks.org/mbostock/3884955
       selection.each(function(data) {
-        data = ["P","Q"].map(function(c) {
+        data = ["V"].map(function(c) {
           return {
             label: c,
             values: data.map(function(d) {
@@ -152,3 +152,6 @@ function realTimeLineChart() {
   
     return chart;
   }
+
+
+
