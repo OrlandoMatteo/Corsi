@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template ,request
 from flask_socketio import SocketIO, emit
 import json
 import os
@@ -12,7 +12,8 @@ app.config['SECRET_KEY'] = 'secret_key'
 socketio = SocketIO(app)
 port = int(os.getenv('VCAP_APP_PORT', 5000))
 
-data=sio.loadmat('values.mat')
+dataframe=json.load(open('dataframe.json'))
+instant=0
 
 @app.route('/')
 def index():
@@ -41,11 +42,15 @@ def network():
 
 @app.route('/getInitData')
 def getInitData():
-    data=[{"time":time.strftime("%a %b %d %Y %H:%M:%S"),"P":randint(0,100),"Q":randint(0,100)} for i in range(100)]
+    data=[{"time":time.strftime("%a %b %d %Y %H:%M:%S"),"V":randint(0,100),"I":randint(0,100)} for i in range(2)]
     return json.dumps(data)
 @app.route('/getData')
 def getData():
-    data={"time":time.strftime("%a %b %d %Y %H:%M:%S"),"P":randint(0,100),"Q":randint(0,100)}
+    global instant
+    s_ID=request.args.get('id')
+    data=dataframe[instant]["values"][s_ID]
+    #data['time']=time.strftime("%a %b %d %Y %H:%M:%S")
+    instant+=1
     return json.dumps(data)
 
 
