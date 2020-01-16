@@ -13,11 +13,13 @@ socketio = SocketIO(app)
 port = int(os.getenv('VCAP_APP_PORT', 5000))
 
 dataframe=json.load(open('dataframe.json'))
+dataset=json.load(open('dataset.json'))
+
 instant=0
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('test2.html')
 @app.route('/jsonData')
 def jsonData():
     return json.dumps(json.load(open('jsonData.json')))
@@ -32,9 +34,9 @@ def grid():
 @app.route('/test')
 def test():
     return render_template('test.html')
-@app.route('/test2')
+@app.route('/test3')
 def test2():
-    return render_template('test2.html')
+    return render_template('test3.html')
 
 @app.route('/network')
 def network():
@@ -53,7 +55,10 @@ def getData():
     instant+=1
     return json.dumps(data)
 
-
+@app.route('/dataframe')
+def getDataframe():
+    s_ID=request.args.get('id')
+    return json.dumps(dataset[s_ID])
 
 if __name__ == '__main__':
     socketio.run(app, debug=True, port=port)
