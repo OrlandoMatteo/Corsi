@@ -14,6 +14,7 @@
     - [Tertiary reviews](#tertiary-reviews)
   - [Review process](#review-process)
     - [Planning](#planning)
+    - [Execution](#execution)
 
 ## Reference
 [SLR](03-SLR.pdf)
@@ -75,7 +76,7 @@ If there's already an high number of systematic reviews it is possible to produc
 
 ## Review process
 
-[Planning](#planning) :arrow_forward: Execution :arrow_forward: Process
+[Planning](#planning) :arrow_forward: [Execution](#execution) :arrow_forward: Process
 
 The stages may appear sequential but is more like an **iteration** of them. Many activities that are initiated during the planning are refined during the execution.
 
@@ -91,3 +92,16 @@ Specifying a **research question** is the most important part of the SLR as they
 - Cost/benefit evaluation
 
 A review protocl specifies the criteria we used for the SLR in order to avoid any bias. Then we need to specify how we applied the criteria (see [pdf](03-SLR.pdf))
+
+### Execution
+
+Research identification :arrow_forward: Primary study selection :arrow_forward: Quality assessment :arrow_forward: Data extraction :arrow_forward: Data analysis
+
+Any exclusion of an article should be justified by some reasons. It's a good practice to consult expert on the field to obtain some guidelines. Usually the most important journal on the field should be considered during the research. Also journal of big companies can be considered. The **search string** is an important factor to define and provide to ensure replicability. Pay attention that usually 90% of the published article comfirms the tested hypotesis. The review process must be transparent and replicable, any decision must be justified.  
+
+During the definition of the protocol we define the criteria for inclusion/exclusion and they can be refined during the process.  
+
+It's considerend important to assess the quality of the primary studies, good studies should eliminate biases and maximise internal and external validity (avoid systematic errors and generalize). It is advisable to:
+
+- Build checklist
+- Assign numerical quantities
