@@ -15,13 +15,15 @@
   - [Review process](#review-process)
     - [Planning](#planning)
     - [Execution](#execution)
+  - [Dissemination strategy](#dissemination-strategy)
 
 ## Reference
+
 [SLR](03-SLR.pdf)
 
 ## What
 
-It's a method to **evaluate** and **interpreting** all the available studies on a given subject, a **rigorous** and **replicable** methodology shoould be used in order to obtain a fair **result**. 
+It's a method to **evaluate** and **interpreting** all the available studies on a given subject, a **rigorous** and **replicable** methodology shoould be used in order to obtain a fair **result**.  
 
 Charachteristic of SLR:
 
@@ -43,7 +45,7 @@ Most research **should** start with a systematic literature review to sysntetize
 
 The first thing to do is to obtain the paper to be analyzed in order to have a complete overview. In order to have a fair research we must include also article that does not support the research hypotesis.
 
-### What for 
+### What for
 
 We do this to different possible reasons:
 
@@ -105,3 +107,9 @@ It's considerend important to assess the quality of the primary studies, good st
 
 - Build checklist
 - Assign numerical quantities
+
+## Dissemination strategy
+
+Venues: **journals**, **conferences**
+
+The structure it's quite similar to the structure of a normal papers

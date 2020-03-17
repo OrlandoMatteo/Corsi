@@ -1,0 +1,34 @@
+---
+title: "AnalisiEsempio"
+author: "Matteo Orlando"
+date: "1/28/2020"
+output: html_document
+---
+
+```{r load_data }
+dm=read.csv2("MockupPostQ.csv")
+
+dm$Q7=factor(dm$Q7, levels=c("A","B","C","D","E"),ordered=FALSE)
+
+#dm
+```
+
+
+Verify correlation among Q3 and Q4
+```{r echo=FALSE}
+contingenza=table(dm$Q3,dm$Q4)
+contingenza
+```
+
+```{r}
+chisq.test(contingenza)
+```
+
+```{r}
+barplot(height = table(dm$Q2),
+        main="Distribuzione risposte Q2",
+        col="salmon",
+        xlab = "Risposte",
+        ylab = "frequenza")
+```
+
