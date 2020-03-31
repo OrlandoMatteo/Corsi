@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<h1 id="modeling-and-problem-solving-with-stochastic-programming">Modeling and problem solving with stochastic programming</h1>
+<h2 id="mathematical-programmin">Mathematical Programmin</h2>
+<p>The first case of mathematical programming is <strong>Linear Programming</strong> (LP). In LP all the variables are positive real number and all LP problem are P while in general Mixed Integere Linear Programming (MILP) are NP-Hard.</p>
+<h3 id="production-problem">Production Problem</h3>
+<p><span class="math inline"><em>x</em><sub><em>A</em></sub>, <em>x</em><sub><em>W</em></sub></span> = liters of paint A/W produced</p>
+<p>Max <span class="math inline">20 * <em>x</em><sub><em>A</em></sub> + 30 * <em>x</em><sub><em>W</em></sub></span></p>
+<p>s.t.<br />
+<br /><span class="math display"><em>x</em><sub><em>A</em></sub> ≤ 60</span><br /> <br /><span class="math display"><em>x</em><sub><em>W</em></sub> ≤ 50</span><br /> <br /><span class="math display">1 * <em>x</em><sub><em>A</em></sub> + 2 * <em>x</em><sub><em>W</em></sub> ≤ 120</span><br /></p>
+<p><br /><span class="math display"><em>x</em><sub><em>A</em></sub>, <em>x</em><sub><em>W</em></sub> ≥ 0</span><br /></p>
+<h3 id="knapsack-problem">Knapsack problem</h3>
+<p><span class="math inline"><em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, <em>x</em><sub>2</sub>, <em>x</em><sub>3</sub>, <em>x</em><sub>4</sub>, <em>x</em><sub>5</sub>=</span> 1 if the relic is taken 0 else</p>
+<p>Max <span class="math inline">100<em>x</em><sub>1</sub> + 300<em>x</em><sub>2</sub> + 60<em>X</em><sub>3</sub> + 600<em>x</em><sub>4</sub> + 450<em>x</em><sub>5</sub></span></p>
+<p>s.t. <br /><span class="math display">13<em>x</em><sub>1</sub> + 6<em>x</em><sub>2</sub> + 9<em>x</em><sub>3</sub> + 24<em>x</em><sub>4</sub> + 6<em>x</em><sub>5</sub> ≤ 30</span><br /></p>
+<h2 id="decision-making-under-uncertainty">Decision-making under uncertainty</h2>
+<p>In most of the case the problems we deal with have uncertain parameter or data may become known during the decision making process. We must remember that our deterministic model are an approximation of the problems they are trying to solve. There are 2 possible types of uncertainty:</p>
+<ul>
+<li>Exogenous: decisions are not able to influence the stochastic process</li>
+<li>Endogenous: decisions influence the stochastic process</li>
+</ul>
+<p>How can we represent the random outcomes? Do we know something about a process (probability distributions, historical data, bounds etc.).</p>
+<h3 id="newsvendor-problem">Newsvendor problem</h3>
+<p>How can we minimize/maximize a function with a uncertain variable?</p>
+<p><span class="math inline"><em>x</em><sub><em>P</em></sub>, <em>x</em><sub><em>B</em></sub>, <em>x</em><sub><em>R</em></sub>=</span> number of newspaper of type P,B,R ordered</p>
+<p>Objective function : <br /><span class="math display"><em>M</em><em>a</em><em>x</em>(1.30<em>x</em><sub><em>P</em></sub> + 1.20<em>x</em><sub><em>B</em></sub> + 1<em>x</em><sub><em>R</em></sub></span><br /></p>
+</body>
+</html>
