@@ -1,5 +1,6 @@
 # Modeling and problem solving with stochastic programming
-## Mathematical Programmin
+
+## Mathematical Programming
 
 The first case of mathematical programming is **Linear Programming** (LP). In LP all the variables are positive real number and all LP problem are P while in general Mixed Integere Linear Programming (MILP) are NP-Hard.
 
@@ -43,16 +44,20 @@ $x_P,x_B,x_R=$ number of newspaper of type P,B,R ordered $D_P,D_B$ demand of pol
 Objective function : $$Max(1.30x_P+1.20x_B+1.00x_R)$$
 
 s.t
-$$x_P\leqD_P$$
+$$x_P\leq D_P$$
 $$x_B\leq100-D_P$$
 $$x_P+x_B+x_R\leq1000$$
-$$x_P,x_B,x_R\geq0 ,\in \N$$
+$$x_P,x_B,x_R\geq0$$
+$$x_P,x_B,x_R\in \N$$
 
 but $D_P$ is the ratio of demand for political newspaper so I can modify my constraint that becomes
 
-$$x_P\leqD_P$$
+$$x_P\leq D_P$$
 $$x_P\leq1-D_P$$
 $$x_P+x_B+x_R\leq1$$
 $$x_P,x_B,x_R\geq0 ,\in \Z+$$
 
-$D_P$ is the **uncertain** ratio of demand of *P*olitical newspaper
+$D_P$ is the **uncertain** ratio of demand of **P**olitical newspaper
+
+The first approach would be to use the expected value. but doing this it may occur that if the optimal solutions depends on that stochastic parameters the the solution could be sub-optimal or even non-feasible.
+

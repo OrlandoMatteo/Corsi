@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 id="modeling-and-problem-solving-with-stochastic-programming">Modeling and problem solving with stochastic programming</h1>
-<h2 id="mathematical-programmin">Mathematical Programmin</h2>
+<h2 id="mathematical-programming">Mathematical Programming</h2>
 <p>The first case of mathematical programming is <strong>Linear Programming</strong> (LP). In LP all the variables are positive real number and all LP problem are P while in general Mixed Integere Linear Programming (MILP) are NP-Hard.</p>
 <h3 id="production-problem">Production Problem</h3>
 <p><span class="math inline"><em>x</em><sub><em>A</em></sub>, <em>x</em><sub><em>W</em></sub></span> = liters of paint A/W produced</p>
@@ -31,7 +31,11 @@
 <p>How can we represent the random outcomes? Do we know something about a process (probability distributions, historical data, bounds etc.).</p>
 <h3 id="newsvendor-problem">Newsvendor problem</h3>
 <p>How can we minimize/maximize a function with a uncertain variable?</p>
-<p><span class="math inline"><em>x</em><sub><em>P</em></sub>, <em>x</em><sub><em>B</em></sub>, <em>x</em><sub><em>R</em></sub>=</span> number of newspaper of type P,B,R ordered</p>
-<p>Objective function : <br /><span class="math display"><em>M</em><em>a</em><em>x</em>(1.30<em>x</em><sub><em>P</em></sub> + 1.20<em>x</em><sub><em>B</em></sub> + 1<em>x</em><sub><em>R</em></sub></span><br /></p>
+<p><span class="math inline"><em>x</em><sub><em>P</em></sub>, <em>x</em><sub><em>B</em></sub>, <em>x</em><sub><em>R</em></sub>=</span> number of newspaper of type P,B,R ordered <span class="math inline"><em>D</em><sub><em>P</em></sub>, <em>D</em><sub><em>B</em></sub></span> demand of politican and business newspaper Objective function : <br /><span class="math display"><em>M</em><em>a</em><em>x</em>(1.30<em>x</em><sub><em>P</em></sub> + 1.20<em>x</em><sub><em>B</em></sub> + 1.00<em>x</em><sub><em>R</em></sub>)</span><br /></p>
+<p>s.t <br /><span class="math display">$$x_P\leqD_P$$</span><br /> <br /><span class="math display"><em>x</em><sub><em>B</em></sub> ≤ 100 − <em>D</em><sub><em>P</em></sub></span><br /> <br /><span class="math display"><em>x</em><sub><em>P</em></sub> + <em>x</em><sub><em>B</em></sub> + <em>x</em><sub><em>R</em></sub> ≤ 1000</span><br /> <br /><span class="math display"><em>x</em><sub><em>P</em></sub>, <em>x</em><sub><em>B</em></sub>, <em>x</em><sub><em>R</em></sub> ≥ 0</span><br /> <br /><span class="math display">$$x_P,x_B,x_R\in \N$$</span><br /></p>
+<p>but <span class="math inline"><em>D</em><sub><em>P</em></sub></span> is the ratio of demand for political newspaper so I can modify my constraint that becomes</p>
+<p><br /><span class="math display">$$x_P\leqD_P$$</span><br /> <br /><span class="math display"><em>x</em><sub><em>P</em></sub> ≤ 1 − <em>D</em><sub><em>P</em></sub></span><br /> <br /><span class="math display"><em>x</em><sub><em>P</em></sub> + <em>x</em><sub><em>B</em></sub> + <em>x</em><sub><em>R</em></sub> ≤ 1</span><br /> <br /><span class="math display">$$x_P,x_B,x_R\geq0 ,\in \Z+$$</span><br /></p>
+<p><span class="math inline"><em>D</em><sub><em>P</em></sub></span> is the <strong>uncertain</strong> ratio of demand of <em>P</em>olitical newspaper</p>
+<p>The first approach would be to use the expected value. but doing this it may occur that if the optimal solutions depends on that stochastic parameters the the solution could be sub-optimal or even non-feasible.</p>
 </body>
 </html>
