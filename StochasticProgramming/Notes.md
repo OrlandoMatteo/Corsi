@@ -4,14 +4,13 @@
 
 The first case of mathematical programming is **Linear Programming** (LP). In LP all the variables are positive real number and all LP problem are P while in general Mixed Integere Linear Programming (MILP) are NP-Hard.
 
-
 ### Production Problem
 
 $x_A ,x_W$ = liters of paint A/W produced
 
 Max   $20*x_A+30*x_W$
 
-s.t.   
+s.t.
 $$x_A \leq60$$
 $$x_W\leq50$$
 $$1*x_A+2*x_W\leq120$$
@@ -40,8 +39,10 @@ How can  we represent the random outcomes? Do we know something about a process 
 
 How can we minimize/maximize a function with a uncertain variable?
 
-$x_P,x_B,x_R=$ number of newspaper of type P,B,R ordered $D_P,D_B$ demand of politican and business newspaper
-Objective function : $$Max(1.30x_P+1.20x_B+1.00x_R)$$
+$x_P,x_B,x_R=$ number of newspaper of type P,B,R ordered $D_P,D_B$ demand of politican and business newspaper.
+
+**Objective function** : 
+$$Max(1.30x_P+1.20x_B+1.00x_R)$$
 
 s.t
 $$x_P\leq D_P$$
@@ -61,3 +62,10 @@ $D_P$ is the **uncertain** ratio of demand of **P**olitical newspaper
 
 The first approach would be to use the expected value. but doing this it may occur that if the optimal solutions depends on that stochastic parameters the the solution could be sub-optimal or even non-feasible.
 
+If I try to solve the model before for $x_P=D_P$ and then i try to solve it for a different value of $D_P$ I can see a strange behaviour. The solution indedd shows how optimizing for specific value of some parameters can produce a lot worse result for similar values. This situation is called **knife-edge property**
+
+It's important to differentiate the stage of the process to take into account that variables that become known during it. Even if some property is present in then optimal solution of the deterministic model that is not true in the stochastic problem in which it can disappear.
+
+### Transient models, Period and Stages
+
+Models can be **steady-state** or **transient** while Stochastic programs can be **two-stage** or **multi-stage** 
