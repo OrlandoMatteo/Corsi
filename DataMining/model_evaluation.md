@@ -47,8 +47,8 @@ different importance (i.e medical cases). In this cases the right approach is
 to evaluate separately for each class  with:
 
 ```math
-Recall=Number of of objects correctly assigned to C/ Number of objects
-belonging to C`$
+Recall=\frac{Number of of objects correctly assigned to C}{Number of objects
+belonging to C}
 ```
 $$Precision(p)=Number of objects correcly assigned to C/Number of objects
 assigned to C$$
