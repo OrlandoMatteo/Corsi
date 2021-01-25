@@ -46,8 +46,8 @@ appropriate for unbalanced class label distribution or if the class have
 different importance (i.e medical cases). In this cases the right approach is
 to evaluate separately for each class  with:
 
-$$Recall=Number of of objects correctly assigned to C/ Number of objects
-belonging to C$$
+$`Recall=Number of of objects correctly assigned to C/ Number of objects
+belonging to C`$
 
 $$Precision(p)=Number of objects correcly assigned to C/Number of objects
 assigned to C$$
