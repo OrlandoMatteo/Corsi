@@ -1,0 +1,47 @@
+#+TITLE: Notes
+#+HTML_HEAD: <link rel="stylesheet" href="tufte.css" type="text/css" />
+<2021-01-11 lun>
+
+* What is Data Mining?
+ We want to extract hidden data from huge dataset that would be impossible to analyze "by hand". We use algorithm that have been designed to perform such operations
+
+* Knowledge Discovering from Data (KDD)
+The fist step is to ask to a domain expert to select the data (*selection*), than we need to preprocees the data to remove error and clean it for the data mining (*preprocessing*). Next step is to transform the data in a common format to be analyzed(*trasnformation*). Finally we can perform the data minin to extract possible recurring pattern. After that we need the last step and use domain experts to extract the knowledge from actually understand what these patterns mean.
+
+* Data mining origins
+Draws from statistics and artificial intelligience, pattern recognition and machine learning, database systems. traditiona approach are not appropriates because of:
+- Significant data volume
+- Large data dimensionality
+- heterogeneous and distributed data
+* Analysis techiques
+** Descriptive methods
+Extract interpretable model describing the data
+** Predictive methods
+Exploit know variable to predict unknowns ones
+* Classification
+Classification can be only use to predict situation that already happened in the past as it learns from data
+** Objectives
+- Prediction of a class label
+- Definition of and intepretable model of a given phenomenon
+** Approaches
+There are different approaches that can be used from simplest ones to nn and SVM
+** Requirements
+The requirements can be accuracy, intepretability, scalability, noise and outlier management. The requirements help us to chose which is the best algorithm to use.
+** Applications
+Thera are myultiuple possible application that can use classification to reach different objectives
+* Clustering
+Used to describe datasets. This approach is usually quite computational expensive
+** Objectives
+- detect group of similar objects
+- identify exceptions and outliers
+** Approaches
+- partitional
+- hierachical
+- density based
+- SOM
+** Requirements
+In general they're not a lot scalable, their main deifferences are for the management of noise and outliers and hte management of large dimensionalities. A big concers inb intepretability as sometimes can be quite complex to immediatly understand the results. Indeed usalually a classification algorithm is used to help the intepretation
+* Association rules
+Used to exctract frequent correlations or patter from a transactional database
+
+:wq
