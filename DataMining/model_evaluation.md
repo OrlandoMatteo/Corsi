@@ -27,7 +27,7 @@ variance. There are different partition technique:
 Usually 2/3 of the data are used for training and 1/3 for testing. This
 tecnique is appropriate for large datasets where the 
 
-#### Crttoss validation 
+#### Cross validation 
 Partition of the data in k disjiont subsets than train on k-1 partition ad
 test on the reamining one. This is method has a reliable accuracy estimation
 and not apprropriate for large datasets
@@ -47,16 +47,15 @@ different importance (i.e medical cases). In this cases the right approach is
 to evaluate separately for each class  with:
 
 ```math
-Recall=\frac{Number of of objects correctly assigned to C}{Number of objects
-belonging to C}
+Recall=Number of of objects correctly assigned to C/Number of objects
+belonging to C
 ```
-$$Precision(p)=Number of objects correcly assigned to C/Number of objects
-assigned to C$$
+Precision(p)=Number of objects correcly assigned to C/Number of objects
+assigned to C
 
 ### ROC (Recever Operating Characteristics)
 
 The RoC Curve plots:
 1. The True Positive Rate (TPR)= TP/(TP+FN)
 2. The False Positive Rate(FPR)
-
 
